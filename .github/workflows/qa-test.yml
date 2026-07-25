@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  qa-tests:
+  tests:
     name: Testes Playwright
     runs-on: ubuntu-latest
     steps:
@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Instalar browsers Playwright
-        run: npx playwright install
+        run: npx playwright install chromium
 
       - name: Executar testes
         run: npx playwright test --reporter=html
