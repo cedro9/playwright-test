@@ -23,11 +23,11 @@ jobs:
       - name: Instalar dependências
         run: npm ci
 
-      - name: Instalar browser Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Instalar browsers Chromium e Firefox
+        run: npx playwright install --with-deps chromium firefox
 
       - name: Executar testes
-        run: npx playwright test --project=chromium --reporter=html
+        run: npx playwright test --project=chromium --project=firefox --reporter=html
 
       - name: Upload relatório
         uses: actions/upload-artifact@v5
