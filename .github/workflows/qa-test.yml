@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Instalar browsers Playwright
-        run: npx playwright install chromium
+        run: npx playwright install
 
       - name: Executar testes
         run: npx playwright test --reporter=html
